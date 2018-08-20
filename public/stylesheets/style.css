@@ -1,0 +1,55 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #c94b4b;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: #f1f1f1;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.tableBox {
+  background: #FFFFFF;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	box-shadow: 0 0 8px silver;
+	border-radius: 8px;
+	color: #323232;
+}
+
+hr {
+	border-color: white;
+}
+
+.macBox {
+	background: #FFFFFF;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	padding: 8px;
+	box-shadow: 0 0 8px silver;
+	border-radius: 8px;
+	font-size: 24px;
+	margin: 0;
+	margin-bottom: 16px;
+	color: #323232;
+}
+
+input[type='submit'] {
+  background: #FFFFFF;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	padding: 8px;
+	box-shadow: 0 0 8px silver;
+	border-radius: 8px;
+	color: #323232;
+  font-size: 18px;
+}
+input[type='number'] {
+    width: 100%;
+    height: 100%;
+    vertical-align: center;
+    font-size: 18px;
+}

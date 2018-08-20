@@ -1,0 +1,73 @@
+extends layout
+
+block content
+	div(class="container")
+		div(class="row")
+			div(class="col text-center")
+				img(src="images/logo.png", width="256", class="mb-4")
+		div(class="row")
+			div(class="col-7")
+				h3(class="text-center mb-4") #{clubs[0].gameCount}. Haftanın Maç Sonuçları
+				each game, i in games
+					if i/(clubs.length/2)<weekCount&&i/(clubs.length/2)>=weekCount-1
+						div(class="row macBox")
+							div(class="col-5")= game.club1
+							div(class="col-1 text-center font-weight-bold")= game.c1gc
+							div(class="col-1 text-center font-weight-bold")= game.c2gc
+							div(class="col-5 text-right")= game.club2
+				hr
+				form(method="post", class="text-center")
+					input(type="submit", class="col-3", value="Next Week", formAction="next")
+					input(type="submit", class="col-3", value="Finish League", formAction="finish")
+					input(type="submit", class="col-3", value="Show Fixture", formmethod="get", formAction="fixture")
+					input(type="submit", class="col-3", value="New League", formAction="new")
+			div(class="col-5")
+				h3(class="text-center mb-4") Şampiyon Olma İhtimalleri
+				div(class="tableBox")
+					table( class="table table-striped")
+						thead
+							tr
+								th(scope="col") Club
+								th(scope="col") Win(%)
+						tbody
+							each club, i in clubs
+								tr
+									th(scope="row")= club
+									if weekCount>=2*(clubs.length-2)&&weekCount!=clubs.length*2-2
+										td= olasiliklar[club]
+									else if weekCount==clubs.length*2-2&&i==0
+										td Şampiyon
+									else if weekCount==clubs.length*2-2
+										td --------
+									else
+										td= 'Belirsiz'
+		h3(class="text-center mb-4") Puan Durumu
+		div(class="row")
+			div(class="col")
+				div(class="tableBox")
+					table( class="table table-striped")
+						thead
+							tr
+								th(scope="col") #
+								th(scope="col") Club
+								th(scope="col") Played
+								th(scope="col") Won
+								th(scope="col") Drawn
+								th(scope="col") Lost
+								th(scope="col") GF
+								th(scope="col") GA
+								th(scope="col") GD
+								th(scope="col") Points
+						tbody
+							each club, index in clubs
+								tr
+									th(scope="row")= index+1
+									td(class="font-weight-bold")= club
+									td= club.gameCount
+									td= club.winCount
+									td= club.drawnCount
+									td= club.loseCount
+									td= club.GFCount
+									td= club.GACount
+									td= club.GDCount
+									td(class="font-weight-bold")= club.points
